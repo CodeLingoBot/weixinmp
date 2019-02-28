@@ -341,7 +341,7 @@ type qrScene struct {
 	} `json:"action_info"`
 }
 
-// get qrcode url
+// GetQRCodeURL gets qrcode url
 func (this *Weixinmp) GetQRCodeURL(ticket string) string {
 	return "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=" + ticket
 }
@@ -538,7 +538,7 @@ func (this *Weixinmp) CreateCustomMenu(btn *[]Button) error {
 	return nil
 }
 
-// get custom menu
+// GetCustomMenu gets custom menu
 func (this *Weixinmp) GetCustomMenu() ([]Button, error) {
 	var menu struct {
 		Menu struct {
@@ -633,7 +633,7 @@ type UserInfo struct {
 	SubscribeTime int64  `json:"subscribe_time"`
 }
 
-// get user info
+// GetUserInfo gets user info
 func (this *Weixinmp) GetUserInfo(openId string) (UserInfo, error) {
 	var uinf UserInfo
 	url := fmt.Sprintf("%suser/info?lang=zh_CN&openid=%s&access_token=", UrlPrefix, openId)

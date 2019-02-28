@@ -42,7 +42,7 @@ type Request struct {
 	Precision float64
 }
 
-// validate request
+// IsValid validates request
 func (this *Request) IsValid(rw http.ResponseWriter, req *http.Request) bool {
 	if !this.checkSignature(req) {
 		rw.WriteHeader(http.StatusUnauthorized)
